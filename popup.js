@@ -9,7 +9,7 @@ function onGrayscaleChange(event) {
 function onSepiaChange(event) {
   var _value = event.target.value;
   
-  chrome.storage.sync.set({'grayscale': _value}, function() {
+  chrome.storage.sync.set({'sepia': _value}, function() {
     console.log("'Sepia saved: %s", _value);
   });
 }
@@ -17,7 +17,7 @@ function onSepiaChange(event) {
   function onContrastChange(event) {
   var _value = event.target.value;
   
-  chrome.storage.sync.set({'grayscale': _value}, function() {
+  chrome.storage.sync.set({'contrast': _value}, function() {
     console.log("'Contrast saved: %s", _value);
   });
 }
@@ -26,3 +26,8 @@ document.getElementById("grayscale").addEventListener('change', onGrayscaleChang
 document.getElementById("sepia").addEventListener('change', onSepiaChange);
 document.getElementById("contrast").addEventListener('change', onContrastChange);
 
+/*
+chrome.storage.sync.get("key", function (obj) {
+    console.log(obj);
+});
+*/
