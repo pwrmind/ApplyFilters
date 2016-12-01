@@ -1,0 +1,50 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        /*font-size: 100%;*/
+      }
+      #mainBlock {
+        /* avoid an excessively wide status text */
+        min-width: 200px;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+      - blur(0px) saturate(0%) brightness(100%) grayscale(100%) contrast(100%) sepia(30%)
+     -->
+  </head>
+  <body>
+    <div id="mainBlock">
+      <div><b>Apply effects and filters to page</b></div>
+      <table>
+        <tr>
+          <td>Grayscale:</td>
+          <td><input type="number" id="grayscale" min="1" max="100" ></td>
+        </tr>
+        <tr>
+          <td>Sepia:</td>
+          <td><input type="number" id="sepia" min="1" max="100" ></td>
+        </tr>
+        <tr>
+          <td>Contrast:</td>
+          <td><input type="number" id="contrast" min="1" max="100" ></td>
+        </tr>
+      </table>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
+
